@@ -144,33 +144,6 @@ void initGL()
 	glEnableVertexAttribArray(0); // Enable the vertex position attribute
 	glEnableVertexAttribArray(1); // Enable the vertex color attribute 
 
-	//Triangle 3
-	const float positions3[] = {
-		//	 X      Y     Z
-		0.0f,   0.6f, 1.0f,		// v0
-		-0.5f,  0.8f, 1.0f,	// v1
-		0.0f,   0.8f, 1.0f		// v2
-	};
-
-	glGenBuffers(1, &positionBuffer);
-	// Set the newly created buffer as the current one
-	glBindBuffer(GL_ARRAY_BUFFER, positionBuffer);
-	// Send the vertex position data to the current buffer
-	glBufferData(GL_ARRAY_BUFFER, sizeof(positions3), positions3, GL_STATIC_DRAW);
-
-	const float colors3[] = {
-		//  R     G		B
-		1.0f, 1.0f, 1.0f,		// White
-		1.0f, 1.0f, 1.0f,		// White
-		1.0f, 1.0f, 1.0f		// White
-	};
-	// Create a handle for the vertex color buffer
-	glGenBuffers(1, &colorBuffer);
-	// Set the newly created buffer as the current one
-	glBindBuffer(GL_ARRAY_BUFFER, colorBuffer);
-	// Send the vertex color data to the current buffer
-	glBufferData(GL_ARRAY_BUFFER, sizeof(colors3), colors3, GL_STATIC_DRAW);
-
 	///////////////////////////////////////////////////////////////////////////
 	// Create shaders
 	///////////////////////////////////////////////////////////////////////////	
