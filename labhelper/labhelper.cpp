@@ -302,7 +302,7 @@ namespace labhelper {
 			// Additionally: if it's (really) bad -> break!
 			if (aSeverity == GL_DEBUG_SEVERITY_HIGH)	{
 #			if defined(_WIN32)
-				__debugbreak();
+					__debugbreak();
 #			else // !win32
                 raise(SIGTRAP);
 #			endif // ~ platform
