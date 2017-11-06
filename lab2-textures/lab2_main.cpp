@@ -27,7 +27,7 @@ GLuint shaderProgram;
 
 // The vertexArrayObject here will hold the pointers to 
 // the vertex data (in positionBuffer) and color data per vertex (in colorBuffer)
-GLuint		positionBuffer, colorBuffer, indexBuffer, vertexArrayObject;						
+GLuint		positionBuffer, colorBuffer, indexBuffer, textureBuffer, vertexArrayObject;						
 
 
 
@@ -77,6 +77,18 @@ void initGL()
 	//				 Set up the attrib pointer.
 	//				 Enable the vertex attrib array.
 	///////////////////////////////////////////////////////////////////////////
+	float texcoords[] = {
+		0.0f, 0.0f, // (u,v) for v0 
+		0.0f, 1.0f, // (u,v) for v1
+		1.0f, 1.0f, // (u,v) for v2
+		1.0f, 0.0f // (u,v) for v3
+	};
+
+	glGenBuffers(1, &textureBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, textureBuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(texcoords), texcoords, GL_STATIC_DRAW);
+	glVertexAttribPointer(2, 2, GL_FLOAT, false/*normalized*/, 0/*stride*/, 0/*offset*/);
+	glEnableVertexAttribArray(2);
 
 	///////////////////////////////////////////////////////////////////////////
 	// Create the element array buffer object
