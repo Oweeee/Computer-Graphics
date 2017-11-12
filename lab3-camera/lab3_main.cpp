@@ -270,8 +270,8 @@ int main(int argc, char *argv[])
 		R[0] = normalize(R[0]);
 		R[2] = vec4(cross(vec3(R[0]), vec3(R[1])), 0.0f);
 		//uncomment for first person view
-		/*cameraPosition = T[3] + vec4(0.0, 1.2, 0.0, 1.0) + R[1];
-		cameraDirection = R[2];*/
+		cameraPosition = T[3] + vec4(0.0, 1.2, 0.0, 1.0) + R[1];
+		cameraDirection = R[2];
 		carModelMatrix = T * R;
 		
 	}
