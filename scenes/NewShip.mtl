@@ -34,9 +34,9 @@ Tf 0 0 0
 newmtl RedMetal
 Kd 0.588235 0.0392157 0.0392157
 Ks 1 1 1
-Pm 0
+Pm 0.189
 Ps 0.247
-Pr 179.612
+Pr 16714.3
 Ke 0 0 0
 Tf 1 1 1
 newmtl WhitePlastic
